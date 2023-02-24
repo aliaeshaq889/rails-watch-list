@@ -1,0 +1,23 @@
+</div class="container">
+  <div class="row justify-content-center">
+    <div class ="col-10">
+      <h1><%= @list.name %></h1>
+      <h2>Bookmarks for this list:</h2>
+      <div class="cards">
+        <%@list.bookmarks.each do |bookmark| %>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2><%= bookmark.movie.title %></h2>
+              <p><%= bookmark.comment %></p>
+            </div>
+          </div>
+        <% end %>
+        </div>
+        <div class="d-flex justify-content-between">
+               <%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: "btn btn-flat" %>
+               <%= link_to "Go back to list", lists_path, class: "btn btn-flat" %>
+        </div>
+    </div>
+  </div>
+</div>
