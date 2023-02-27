@@ -2,11 +2,12 @@
   <div class="row justify-content-center">
     <div class ="col-10">
       <h1><%= @list.name %></h1>
+       <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
       <h2>Bookmarks for this list:</h2>
       <div class="cards">
         <%@list.bookmarks.each do |bookmark| %>
           <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= bookmark.movie.title %></h2>
               <p><%= bookmark.comment %></p>
